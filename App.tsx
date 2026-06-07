@@ -15,6 +15,7 @@ import {
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
+  console.log(isDarkMode)
 
   return (
     <SafeAreaProvider>
@@ -30,10 +31,12 @@ function AppContent() {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.titleText}>
-        Hi, This is Ganesh
+        <Text style={{textAlign:'center', fontSize:36}}>Hi Ganesh</Text>
+        <Text>{'\n'}</Text>
+        <Text style={{fontStyle:'italic'}}>
+        Welcome 😊 to the World of Mobile Apps
+        </Text>
       </Text>
-      <Button title="hello"></Button>
-      {/* <TextInput placeholder='Hello Enter Your Name'></TextInput> */}
     </SafeAreaView>
   );
 }
@@ -41,10 +44,17 @@ function AppContent() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width:'100%',
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
   },
   titleText :{
+    width: 350,
     color: '#ffffff',
-    backgroundColor:'red'
+    fontWeight:700,
+    flexWrap:'wrap'
+    
   }
 });
 
