@@ -6,12 +6,14 @@
  */
 
 import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View, Text, Button, TextInput } from 'react-native';
+import { StatusBar, StyleSheet, useColorScheme, View, Text, Button, TextInput, Image } from 'react-native';
 import {
   SafeAreaProvider,
   SafeAreaView,
   useSafeAreaInsets,
 } from 'react-native-safe-area-context';
+
+
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -30,13 +32,18 @@ function AppContent() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.titleText}>
+      {/* <Text style={styles.titleText}>
         <Text style={{textAlign:'center', fontSize:36}}>Hi Ganesh</Text>
         <Text>{'\n'}</Text>
         <Text style={{fontStyle:'italic'}}>
         Welcome 😊 to the World of Mobile Apps
         </Text>
-      </Text>
+      </Text> */}
+      <Image 
+        source={require('@/assets/images/GaneshProfilePic.webp')}
+        style={styles.profilePic} 
+      />
+
     </SafeAreaView>
   );
 }
@@ -55,7 +62,9 @@ const styles = StyleSheet.create({
     fontWeight:700,
     flexWrap:'wrap'
     
-  }
+  },
+  
+  profilePic: { width: 150, height: 150, borderRadius: 80, borderWidth:1 }
 });
 
 export default App;
